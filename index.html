@@ -253,113 +253,250 @@
 
      <!----------PORTFOLIO--------------->
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section" style="padding: 60px 0;">
+     <!-- Estilos para Portfolio Cards Atualizado -->
+            <style>
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 2rem;
+        }
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Uma curadoria dos projetos mais relevantes que desenvolvi na área de dados, 
+        .project-card {
+          position: relative;
+          background: #fff;
+          border-radius: 1rem;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* container de imagem do projeto maior */
+        .project-image {
+          width: 100%;
+          height: 240px;
+          overflow: hidden;
+        }
+        .project-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        /* faixa degradê no topo do card */
+        .project-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .project-content {
+          padding: 1.5rem;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .project-title {
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+          color: #1a3a80;
+        }
+
+        .project-description {
+          font-size: 0.95rem;
+          margin-bottom: 1rem;
+          color: #555;
+          flex: 1;
+        }
+
+        .tools-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1rem;
+        }
+        .tools-list li {
+          position: relative;
+          padding: 0.5rem 1rem 0.5rem 1.25rem;
+          margin-bottom: 0.5rem;
+          background: #f5f7fa;
+          border-radius: 0.5rem;
+          line-height: 1.4;
+        }
+        .tools-list li::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 70%;
+          background-color: #4facfe;
+          border-radius: 2px;
+        }
+
+        /* Botão com degradê */
+        .project-link {
+          display: inline-block;
+          padding: 0.6rem 1.2rem;
+          border-radius: 0.75rem;
+          background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+          color: #fff;
+          text-decoration: none;
+          font-weight: 500;
+          transition: opacity .2s;
+          margin-top: auto;
+        }
+        .project-link:hover {
+          opacity: 0.9;
+        }
+      </style>
+
+    <!-- Portfolio Section -->
+      <section id="portfolio" class="portfolio section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Projetos</h2>
+          <p>Uma curadoria dos projetos mais relevantes que desenvolvi na área de dados, 
           com foco em gerar valor real para diferentes áreas de negócio. Aqui você encontrará aplicações 
           práticas e multidisciplinares, sempre conectadas a desafios concretos, impacto mensurável e insights acionáveis</p>
-      </div><!-- End Section Title -->
+        </div>
+        <div class="container projects-grid">
 
-      <div class="container">
+          <!-- Card 1 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="assets/img/portfolio/int_cigarrinha.png" alt="Automação de Mapas Agrícolas">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">AAutomação de Mapas Agrícolas: De Horas para Minutos</h3>
+              <p class="project-description">
+               Transformei um processo manual de várias horas em automação de 10 minutos, 
+                integrando PostgreSQL + QGIS + Python. Eliminei 100% dos erros humanos e criei 
+                capacidade de produção múltipla simultânea. Solução corporativa que liberou equipe técnica para atividades estratégicas.
+              </p>
+              <h4>Ferramentas utilizadas:</h4>
+              <ul class="tools-list">
+                <li>QGIS</li>
+                <li>Python</li>
+                <li>PostgreSQL</li>
+                <li>Excel</li>
+                <li>Geoprocessamento</li>
+                <li>GitHub</li>                
+              </ul>
+              <a href="https://github.com/cccandido/automacao-mapas-agricolas" class="project-link">Saiba mais</a>
+            </div>
+          </div>
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+           <!-- Card 2 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="assets/img/portfolio/daninhas_3.png" alt="Dashboard de Infestação de Daninhas">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Sistema de BI Agrícola para Gestão de Infestação de Daninhas</h3>
+              <p class="project-description">
+                Unifiquei dados fragmentados de duas equipes em fonte única corporativa. 
+                Dashboard utilizado desde nível operacional até reportes para diretoria, 
+                com facilidade e velocidade de justificativas técnicas e exportação direta para planos de ação. 
+                Transformou gestão reativa em inteligência preditiva.
+              </p>
+              <h4>Ferramentas utilizadas:</h4>
+              <ul class="tools-list">
+                <li>Análise de Negócio</li>
+                <li>Power BI</li>
+                <li>Power Query</li>
+                <li>DAX</li>
+                <li>Excel</li>
+                <li>Figma</li>                            
+              </ul>
+              <a href="https://github.com/cccandido/dashboard_infestacao_daninhas" class="project-link">Saiba mais</a>
+            </div>
+          </div>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <!-- Card 3 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="assets/img/portfolio/dengue_2.png" alt="Validação de Hipóteses em Saúde Pública">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Validação de Hipóteses em Saúde Pública</h3>
+              <p class="project-description">
+                Nesse trabalho voluntário em parceria com o setor de endemias do município, refutei hipótese epidemiológica estabelecida através de análise estatística rigorosa. 
+                Descobri padrão preditivo de 4 semanas para surtos, transformando monitoramento reativo em 
+                sistema de alerta precoce. Resultados apresentados em congresso científico pelo setor.
+              </p>
+              <h4>Ferramentas utilizadas:</h4>
+              <ul class="tools-list">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Matplotlib</li>
+                <li>Seaborn</li>
+                <li>Análise Estatística</li>      
+                <li>Jupyter Notebook</li>                               
+              </ul>
+              <a href="https://github.com/cccandido/padrao_temporal_dengue" class="project-link">Saiba mais</a>
+            </div>
+          </div>
 
-            <!-------PROJETO 01--------->
+          <!-- Card 4 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="assets/img/portfolio/churn_2.png" alt="Análise de Clientes e Churn com RFM">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Análise de Clientes e Churn com RFM</h3>
+              <p class="project-description">
+                Implementei análise completa de comportamento de clientes com modelo RFM, 
+                identificando padrões de risco de churn. Dashboard interativo online em Streamlit com insights 
+                acionáveis para estratégias de retenção e CRM. Metodologia replicável para 
+                qualquer base de clientes.
+              </p>
+              <h4>Ferramentas utilizadas:</h4>
+              <ul class="tools-list">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Matplotlib</li>
+                <li>PostgreSQL</li>
+                <li>Streamlit</li>
+                <li>Streamlit Cloud</li>
+              </ul>
+              <a href="https://github.com/cccandido?tab=repositories" class="project-link">Saiba mais</a>
+            </div>
+          </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/cigarrinha.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Automação de Dados para mapas de pragas agrícolas</h4>
-                <p>Aplicação Real – Setor Parceiro</p>
-                <a href="assets/img/masonry-portfolio/cigarrinha_desc.png" title="Saiba mais" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/cccandido/automacao-mapas-agricolas" title="Repositório" class="details-link"><i class="bi bi-link-45deg"></i></a>
+      
+          <!-- Cartões em construção -->
+          <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-content">
+              <div class="construction">
+                <div class="construction-icon">🚧</div>
+                <h3>Análise dos dados de plantio</h3>
+                <p>Projeto em desenvolvimento</p>
               </div>
-            </div><!-- End Portfolio Item -->
-            
-            <!-------PROJETO 02--------->
+            </div>
+          </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/churn.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Análise de Clientes e Churn com RFM</h4>
-                <p>Projeto Conceitual com SQL + Python + Streamlit</p>
-                <a href="assets/img/masonry-portfolio/churn desc.png" title="Saiba mais" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/cccandido/northwind" title="Repositório" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-content">
+              <div class="construction">
+                <div class="construction-icon">🚧</div>
+                <h3>Compilado de Dashboards em Power Bi</h3>
+                <p>Projeto em desenvolvimento</p>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-------PROJETO 03--------->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/dengue.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Validação de Hipóteses em Saúde Pública </h4>
-                <p>Voluntariado – Análise Estatística</p>
-                <a href="assets/img/masonry-portfolio/dengue_desc.png" title="Saiba mais" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/cccandido/padrao_temporal_dengue" title="Repositório" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-------PROJETO 04--------->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/daninhas.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sistema de BI Agrícola para Gestão de Infestação de Daninhas</h4>
-                <p>Setor Parceiro – Georreferenciamento e Análise Visual</p>
-                <a href="assets/img/masonry-portfolio/daninhas_desc.png" title="Saiba mais" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/cccandido/dashboard_infestacao_daninhas" title="Repositório" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-------PROJETO 05--------->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/falhas.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Painel de Falhas de Plantio para Tomada de Decisão Agrícola</h4>
-                <p>Business Inteligence + Visualização</p>
-                <a href="assets/img/masonry-portfolio/construcao.png" title="Saiba mais" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/masonry-portfolio/construcao.png" 
-                    title="Repositório" 
-                    data-gallery="portfolio-gallery-product2" 
-                    class="glightbox details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>             
-                </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-------PROJETO 06--------->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/compilado_pbi.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Compilado de Dashboards Power BI para Áreas de Negócio</h4>
-                <p>Setores Parceiros – Insights Multidisciplinares</p>
-                <a href="assets/img/masonry-portfolio/construcao.png" title="Saiba mais" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/masonry-portfolio/construcao.png" 
-                    title="Repositório" 
-                    data-gallery="portfolio-gallery-product2" 
-                    class="glightbox details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>             
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
+            </div>
+          </div>
 
         </div>
+      </section>
 
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
+     
 
     <!-----LINHA PARA SEPARAR OS CONTAINERS------->
     
